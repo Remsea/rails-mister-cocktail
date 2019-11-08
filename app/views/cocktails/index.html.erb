@@ -12,7 +12,7 @@
       <%= link_to '', cocktail_path(cocktail), class: 'down' %>
       <%var += 1  %>
 
-      <%=  image_tag(asset_path("photo#{var}.jpeg"), alt: "Cocktail", width: 200) %>
+      <%=  image_tag("photo#{var}.jpg", alt: "Cocktail", width: 200) %>
       <div class="card-trip-infos">
         <div>
           <h2><%=cocktail.name%></h2>
