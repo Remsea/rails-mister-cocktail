@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <div class="mygrid">
+    <% var = 0 %>
+    <% @cocktails.each do |cocktail| %>
+     <div class="card-trip">
+      <%= link_to show_svg('rubbish.svg'), cocktail_path(cocktail), method: :delete, class: 'up', data: { confirm: "Are you sure?" } %>
+      <%= link_to '', cocktail_path(cocktail), class: 'down' %>
+      <%var += 1  %>
+
+      <%=  image_tag("photo#{var}.jpeg", alt: "Cocktail", width: 200) %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%=cocktail.name%></h2>
+          <p>Good cocktail</p>
+           </div>
+      </div>
+    </div>
+
+    <% end %>
+    <div class="card_ajout"> <div class="ajout"><%= link_to image_tag("ajout.png", alt: "ajout"), new_cocktail_path %></div></div>
+  </div>
+</div>
+
+
+
+
+
+

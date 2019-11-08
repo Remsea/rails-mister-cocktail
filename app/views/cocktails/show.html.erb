@@ -1,0 +1,22 @@
+
+<div class="container">
+<div class="list-group"></div>
+<div class="list-group-item list-group-item-primary mb-2 align-content-center">
+<%= @cocktail.name %>
+</div>
+
+<div class="list-group-item list-group-item-success">
+  Ingredient<%='s' if @cocktail.doses.size >1 %> list<span class="badge badge-primary badge-pill ml-3"><%= @cocktail.doses.size %></span>
+</div>
+  <% @cocktail.doses.each do |dose| %>
+  <div class="list-group-item">
+  <%= dose.ingredient.name %>,
+  <%= dose.description %> -
+  <%= link_to show_svg('rubbish.svg'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }  %>
+  </div>
+  <% end %>
+
+<div class="btn-group btn-group-lg mt-3" role="group" aria-label="Basic example">
+<%= link_to 'Go back', cocktails_path, class: 'btn btn-secondary mr-3'  %>
+<%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-secondary' %>
+</div>

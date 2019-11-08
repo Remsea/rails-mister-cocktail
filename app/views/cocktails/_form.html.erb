@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="btn-group btn-group-lg mt-3 w-50" role="group" aria-label="Basic example">
+<%= simple_form_for @cocktail,  html: { class: 'w-100 align-content-stretch' } do |f| %>
+  <%= f.input :name %>
+
+  <div class="container">
+    <div class="row justify-content-between">
+      <%= f.button :submit, class: 'bs btn btn-secondary col-5'  %>
+      <%= link_to "Go back", cocktails_path, class: 'bs btn btn-secondary col-5'  %>
+    </div>
+  </div>
+<% end %>
+
+</div>
+</div>
