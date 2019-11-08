@@ -25,8 +25,13 @@ class CocktailsController < ApplicationController
 
   def destroy
     moncocktail = Cocktail.find(params[:id])
-    moncocktail.destroy
-    redirect_to cocktails_path
+    if moncocktail.doses.size == 0
+      moncocktail.destroy
+      redirect_to cocktails_path
+    else
+      flash[:notice] = "Cocktails has doses, cant delete"
+     redirect_to cocktails_path
+    end
   end
 
   private

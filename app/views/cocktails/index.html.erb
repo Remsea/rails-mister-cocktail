@@ -1,6 +1,9 @@
 
 
 <div class="container">
+  <% if flash[:notice] %>
+    <div class="notice alert alert-danger"><%= flash[:notice] %></div>
+  <% end %>
   <div class="mygrid">
     <% var = 0 %>
     <% @cocktails.each do |cocktail| %>
